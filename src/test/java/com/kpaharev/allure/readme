@@ -1,0 +1,6 @@
+SelenideTestAllure.java - 1. Чистый Selenide (с Listener)
+
+LambdaStepsSelenideTestAllure.java - 2. Лямбда шаги через step (name, () -> {})
+
+WebSteps.java + AnnotationSteps.java - 3. Шаги с аннотацией @Step
+

@@ -17,7 +17,7 @@ public class LambdaStepsSelenideTestAllure {
 
     String TestAddress = "eroshenkoam/allure-example"; //Эта переменная - тест позитивный
     //String TestAddress = "myrisingsun/demoqa_test"; //Эта переменная - тест негативный (тк на странице нет 76)
-    String IssueNumber = "#76"; // номер Issue который мы ищем и проверяем
+    String IssueNumber = "#77"; // номер Issue который мы ищем и проверяем
 
    @BeforeAll
     static void SetUp (){
@@ -29,7 +29,7 @@ public class LambdaStepsSelenideTestAllure {
     @Test
     public void testGithubIssue () {
         // добавление функционала по отражению в отчете сценария теста
-        // SelenideLogger.addListener("allure", new AllureSelenide()); // данная строка добавляет сценарий исполнения в отчет
+        SelenideLogger.addListener("allure", new AllureSelenide()); // данная строка добавляет сценарий исполнения в отчет
 
         step("Открываем страницу - https://github.com/", () -> {
             // документация  по selenide - https://ru.selenide.org/documentation.html
