@@ -20,7 +20,7 @@ public class AnnotationSteps {
     private static final Integer IssueNumber = 76; // номер Issue который мы ищем и проверяем
 
    @BeforeAll
-    static void SetUp (){
+    static void setUp (){
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
 

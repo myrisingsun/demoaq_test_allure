@@ -1,5 +1,6 @@
 package com.kpaharev.allure;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -19,7 +20,7 @@ public class SelenideTestAllure {
     //String TestAddress = "myrisingsun/demoqa_test";
 
    @BeforeAll
-    static void SetUp (){
+    static void setUp (){
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
 
@@ -42,7 +43,7 @@ public class SelenideTestAllure {
         $(linkText(TestAddress)).click();
         // поиск элемента и клие по нему (поиск по частичному содержанию (в данном случае слово Issues), (PartialLinkText возвращает элементы, включающие заданный текст)
         $(partialLinkText("Issues")).click();
-        // клик по элементу (withText - поиск элемента по тексту (подстроке))
-        $(withText("#76")).click();
+        // Проверка видимости элемента (withText - поиск элемента по тексту (подстроке))
+        $(withText("#76")).should(Condition.visible);
     }
 }

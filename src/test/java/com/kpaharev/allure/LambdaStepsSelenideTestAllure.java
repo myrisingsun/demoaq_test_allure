@@ -1,5 +1,6 @@
 package com.kpaharev.allure;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,7 +21,7 @@ public class LambdaStepsSelenideTestAllure {
     String IssueNumber = "#77"; // номер Issue который мы ищем и проверяем
 
    @BeforeAll
-    static void SetUp (){
+    static void setUp (){
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
 
@@ -57,8 +58,8 @@ public class LambdaStepsSelenideTestAllure {
         });
 
         step ("Проверяем наличие на странице Issue c номером " + IssueNumber, () -> {
-            // клик по элементу (withText - поиск элемента по тексту (подстроке))
-            $(withText(IssueNumber)).click();
+            //проверка видимости элемента (withText - поиск элемента по тексту (подстроке))
+            $(withText(IssueNumber)).should(Condition.visible);
         });
 
     }
